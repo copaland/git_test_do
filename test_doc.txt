@@ -4,3 +4,76 @@
 마르고 닳도록
 하느님이 보우하사
 우리나라 만세
+
+PS C:\github> git add .
+PS C:\github> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test_doc.txt
+
+PS C:\github> git commit -m "Fist commit"
+[master (root-commit) c8476ff] Fist commit
+ 1 file changed, 4 insertions(+)
+ create mode 100644 test_doc.txt
+PS C:\github> git remote origin https://github.com/copaland/git_test_do.git
+error: unknown subcommand: `origin'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --[no-]verbose    be verbose; must be placed before a subcommand
+
+PS C:\github> git remote add origin https://github.com/copaland/git_test_do.git
+PS C:\github> git remote -v
+origin  https://github.com/copaland/git_test_do.git (fetch)
+origin  https://github.com/copaland/git_test_do.git (push)
+PS C:\github> git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/copaland/git_test_do.git'
+PS C:\github> git push origin master
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 274 bytes | 274.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/copaland/git_test_do/pull/new/master
+remote:
+To https://github.com/copaland/git_test_do.git
+ * [new branch]      master -> master
+PS C:\github> git push origin master
+Everything up-to-date
+PS C:\github> git push -u origin master
+branch 'master' set up to track 'origin/master'.
+Everything up-to-date
+PS C:\github> git add .
+PS C:\github> git commit -m "Second commit"
+[master bbb7410] Second commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+PS C:\github> git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 342 bytes | 342.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/copaland/git_test_do.git
+   c8476ff..bbb7410  master -> master
+PS C:\github>
